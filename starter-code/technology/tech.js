@@ -18,7 +18,7 @@ menuClose.addEventListener('click', ()=>{
 let allData = []
 async function techData(){
     try{
-        const res = await fetch('/starter-code/data.json')
+        const res = await fetch('../data.json')
         const result =await res.json()
 
         allData = result.technology

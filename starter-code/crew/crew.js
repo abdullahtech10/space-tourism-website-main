@@ -17,7 +17,7 @@ menuClose.addEventListener('click', ()=>{
 let allData = []
 async function crewData() {
     try {
-        const res = await fetch('/starter-code/data.json')
+        const res = await fetch('../data.json')
         const result = await res.json()
         allData = result.crew
         loadCrew(3)

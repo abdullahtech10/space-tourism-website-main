@@ -19,7 +19,7 @@ menuClose.addEventListener('click', ()=>{
 let allData = []
 async function destinationPage() {
     try{
-        const res = await fetch('/starter-code/data.json')
+        const res = await fetch('../data.json')
         const result = await res.json()
         allData = result.destinations
         // console.log(result.destinations.images);
