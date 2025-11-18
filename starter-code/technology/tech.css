@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-dark: #0B0D17;
+    --clr-light: #D0D6F9;
+    --clr-white: #FFFFFF;
+
+    --ff-bellfair: "Bellefair", serif;
+    --ff-barlow: "Barlow", sans-serif;
+    --ff-barlow-condensed: "Barlow Condensed", sans-serif;
+}
+
+body {
+    font-family: var(--ff-barlow);
+    background-color: var(--clr-dark);
+    background-image: url('/starter-code/assets/technology/background-technology-desktop.jpg');
+    /* background-position: center; */
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4%;
+    padding-top: 1%;
+}
+
+.links {
+    display: flex;
+    gap: 1.5rem;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.03);
+    width: 60%;
+    padding-left: 10%;
+}
+
+.links a {
+    color: var(--clr-white);
+    text-decoration: none;
+    position: relative;
+    font-size: 1rem;
+    transition: color 0.3s;
+    padding: 1.3rem 0;
+    /* border-bottom:2px solid red ; */
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 0;
+    background-color: var(--clr-white);
+    transition: width 0.3s ease;
+
+}
+
+.links a:hover {
+    color: #D0D6F9;
+    /* text-decoration: underline; */
+}
+
+.links a:hover::after,
+.links a.active::after {
+    width: 100%;
+}
+
+.icon-menu{
+    display: none;
+}
+
+section {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h4 {
+    font-family: var(--ff-bellfair);
+    color: #FFFFFF;
+}
+
+p {
+    color: var(--clr-white);
+    opacity: 0.6;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 85vh;
+}
+
+.tech-con {
+    display: flex;
+    align-items: start;
+    gap: 2rem;
+}
+
+.btn-con {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.left {
+    width: 420px;
+}
+
+button {
+    /* display: block; */
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--clr-light);
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+    font-size: 1.2rem;
+    color: var(--clr-white);
+}
+
+button.active {
+    background: #FFFFFF;
+    color: var(--clr-dark);
+}
+
+h2 {
+    color: var(--clr-white);
+    margin-bottom: 10rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+span {
+    opacity: 0.6;
+}
+
+h4 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+
+h1 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+
+.right img {
+    width: 430px;
+}
+
+.mobile{
+    display: none;
+}
+
+@media (max-width:759px) {
+    body {
+        background-image: url('/starter-code/assets/technology/background-technology-mobile.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .links {
+        position: fixed;
+        flex-direction: column;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        min-height: 60vh;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(40px);
+        border-radius: 10px;
+        justify-content: center;
+        margin: 6rem auto 0;
+        padding: 1rem;
+        box-shadow:  1px 1px 1px 1px silver;
+        transition: all 1s ease;
+        z-index: 98;
+
+    }
+
+    .links.active{
+        right: 0;
+        left: 0;
+    }
+
+    .links a {
+        text-align: center;
+    }
+
+    nav {
+        width: 100%;
+        padding: 1rem 1rem 0;
+    }
+
+    .menu-open {
+        display: inline-block;
+    }
+
+    .menu-open.active {
+        display: none;
+    }
+
+    .menu-close {
+        display: none;
+    }
+
+    .menu-close.active {
+        display: block;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .hero-section {
+        flex-direction: column-reverse;
+        justify-content: center;
+        /* min-height: 100vh; */
+        gap: 5rem;
+    }
+
+    .left{
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .left h2{
+        display: none;
+    }
+
+    .tech-con{
+        flex-direction: column;
+    }
+
+    .btn-con{
+        justify-content: center;
+        align-items: center;
+        /* text-align: center; */
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .mobile{
+        display: block;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        padding-left: 2rem;
+    }
+
+    .right img{
+        width: 100vw;
+    }
+
+
+}
+
+@media screen and (min-width: 760px) and (max-width: 900px) {
+    body {
+        background-image: url('/starter-code/assets/technology/background-technology-tablet.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .hero-section {
+        flex-direction: column-reverse;
+        justify-content: center;
+        /* min-height: 100vh; */
+        gap: 5rem;
+    }
+
+    .left h2{
+        display: none;
+    }
+
+    .mobile{
+        display: block;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        padding-left: 2rem;
+    }
+
+    .right img{
+        width: 600px;
+        
+    }
+/* 
+    
+    .left{
+        width: 100%;
+        padding: 1rem;
+    } */
+
+
+    .left{
+        text-align: center;
+    }
+
+    .left h2{
+        display: none;
+    }
+
+    .tech-con{
+        flex-direction: column;
+    }
+
+    .btn-con{
+        justify-content: center;
+        align-items: center;
+        /* text-align: center; */
+        width: 100%;
+        flex-direction: row;
+    }
+
+    
+}
