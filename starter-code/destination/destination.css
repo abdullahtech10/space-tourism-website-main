@@ -19,7 +19,7 @@
 body {
     font-family: var(--ff-barlow);
     background-color: var(--clr-dark);
-    background-image: url('/starter-code/assets/destination/background-destination-desktop.jpg');
+    background-image: url('../assets/destination/background-destination-desktop.jpg');
 
 }
 
@@ -166,7 +166,7 @@ button.active {
 
 @media (max-width:759px) {
     body {
-        background-image: url('/starter-code/assets/destination/background-destination-mobile.jpg');
+        background-image: url('../assets/destination/background-destination-mobile.jpg');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -245,7 +245,7 @@ button.active {
 
 @media screen and (min-width: 760px) and (max-width: 900px) {
     body {
-        background-image: url('/starter-code/assets/destination/background-destination-tablet.jpg');
+        background-image: url('../assets/destination/background-destination-tablet.jpg');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
